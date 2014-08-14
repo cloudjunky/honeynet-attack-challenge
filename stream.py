@@ -28,8 +28,6 @@ class StreamProcess():
         nids.chksum_ctl([('0.0.0.0/0', False)])  # disable checksumming
         nids.param('scan_num_hosts', 0)  # disable portscan detection
 
-        self.config.filename = 'attack-trace.pcap'
-
         if self.config.filename:
             nids.param('filename', self.config.filename)
         else:
