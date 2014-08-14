@@ -1,0 +1,6 @@
+filemagic==1.6
+numpy==1.8.1
+pefile==1.2.10-114
+pynids==0.6.1
+python-magic==0.4.6
+wsgiref==0.1.2

